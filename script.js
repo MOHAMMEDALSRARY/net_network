@@ -44,3 +44,26 @@ buttons.forEach((button) => {
     });
 
 });
+
+// تشغيل قائمة الهاتف
+const menuToggle = document.getElementById("menuToggle");
+const mainNav = document.getElementById("mainNav");
+
+menuToggle.addEventListener("click", function () {
+mainNav.classList.toggle("active");
+
+if (mainNav.classList.contains("active")) {
+    menuToggle.textContent = "✕";
+} else {
+    menuToggle.textContent = "☰";
+}
+
+});
+
+// إغلاق القائمة بعد الضغط على أحد الروابط
+mainNav.querySelectorAll("a").forEach(function (link) {
+link.addEventListener("click", function () {
+mainNav.classList.remove("active");
+menuToggle.textContent = "☰";
+});
+});

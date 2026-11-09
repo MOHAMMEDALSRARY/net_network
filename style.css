@@ -1,0 +1,469 @@
+/* إعدادات عامة */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #080d20;
+    color: white;
+    line-height: 1.8;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* القائمة الرئيسية */
+.header {
+    width: 100%;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(10, 17, 42, 0.95);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(0, 217, 255, 0.2);
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #00e5ff;
+    text-shadow: 0 0 15px #00e5ff;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: white;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #00e5ff;
+}
+
+/* الواجهة الرئيسية */
+.hero {
+    min-height: 620px;
+    padding: 80px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 80% 50%, #182b69, transparent 35%),
+        linear-gradient(135deg, #080d20, #101b42);
+}
+
+.hero-content {
+    max-width: 600px;
+    animation: slideRight 1s ease;
+}
+
+.badge {
+    display: inline-block;
+    padding: 8px 18px;
+    border-radius: 30px;
+    background: rgba(0, 229, 255, 0.12);
+    color: #00e5ff;
+    border: 1px solid #00e5ff;
+}
+
+.hero h1 {
+    font-size: 55px;
+    line-height: 1.4;
+    margin: 20px 0;
+}
+
+.hero h1 span {
+    background: linear-gradient(90deg, #00e5ff, #a855f7);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.hero-content p {
+    color: #b8c6e8;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* الأزرار */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: 0.3s;
+    text-align: center;
+}
+
+.primary {
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
+    color: white;
+    box-shadow: 0 0 20px rgba(0, 198, 255, 0.35);
+}
+
+.secondary {
+    color: #00e5ff;
+    border: 1px solid #00e5ff;
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px #00c6ff;
+}
+
+/* رسمة الواي فاي */
+.wifi-animation {
+    width: 280px;
+    height: 280px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.wifi-circle {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(135deg, #00e5ff, #6d28d9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 65px;
+    box-shadow: 0 0 50px #00c6ff;
+    z-index: 2;
+    animation: float 3s infinite ease-in-out;
+}
+
+.signal {
+    position: absolute;
+    border: 2px solid #00e5ff;
+    border-radius: 50%;
+    animation: pulse 3s infinite;
+}
+
+.signal-one {
+    width: 170px;
+    height: 170px;
+}
+
+.signal-two {
+    width: 220px;
+    height: 220px;
+    animation-delay: 0.7s;
+}
+
+.signal-three {
+    width: 270px;
+    height: 270px;
+    animation-delay: 1.4s;
+}
+
+/* عناوين الأقسام */
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title span {
+    color: #00e5ff;
+}
+
+.section-title h2 {
+    font-size: 35px;
+    margin: 10px 0;
+}
+
+.section-title p {
+    color: #aab8d8;
+}
+
+/* الباقات */
+.plans,
+.features,
+.connection {
+    padding: 90px 8%;
+}
+
+.plans {
+    background: #0b1230;
+}
+
+.plans-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.plan-card {
+    background: linear-gradient(145deg, #141f49, #10172f);
+    padding: 35px 25px;
+    border-radius: 20px;
+    text-align: center;
+    border: 1px solid rgba(0, 229, 255, 0.2);
+    transition: 0.4s;
+    position: relative;
+}
+
+.plan-card:hover {
+    transform: translateY(-12px);
+    border-color: #00e5ff;
+    box-shadow: 0 0 30px rgba(0, 229, 255, 0.2);
+}
+
+.plan-icon {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.plan-card h3 {
+    font-size: 23px;
+    margin-bottom: 10px;
+}
+
+.plan-card h2 {
+    color: #00e5ff;
+    font-size: 19px;
+    margin: 15px 0;
+}
+
+.plan-card p {
+    color: #b8c6e8;
+    margin-bottom: 15px;
+}
+
+.speed {
+    color: #a855f7 !important;
+}
+
+.popular {
+    border: 2px solid #a855f7;
+    transform: scale(1.04);
+}
+
+.popular-label {
+    position: absolute;
+    top: -15px;
+    right: 50%;
+    transform: translateX(50%);
+    background: #a855f7;
+    padding: 4px 20px;
+    border-radius: 20px;
+}
+
+/* المميزات */
+.features {
+    background: #080d20;
+}
+
+.features-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.feature-box {
+    background: #121c40;
+    padding: 30px 20px;
+    text-align: center;
+    border-radius: 18px;
+    border-bottom: 3px solid #00e5ff;
+    transition: 0.3s;
+}
+
+.feature-box:hover {
+    transform: translateY(-10px);
+    background: #192858;
+}
+
+.feature-box div {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.feature-box p {
+    color: #aab8d8;
+}
+
+/* خطوات الاتصال */
+.connection {
+    background: #0b1230;
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.step {
+    background: #141f49;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.step span {
+    font-size: 35px;
+    color: #00e5ff;
+    font-weight: bold;
+}
+
+.step p {
+    color: #aab8d8;
+}
+
+/* التواصل */
+.contact {
+    text-align: center;
+    padding: 90px 20px;
+    background: linear-gradient(135deg, #10265c, #35145f);
+}
+
+.contact h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.contact p {
+    color: #d1ddf7;
+    margin-bottom: 25px;
+}
+
+/* التذييل */
+footer {
+    padding: 25px;
+    text-align: center;
+    background: #050916;
+    color: #8fa4ce;
+}
+
+/* الحركات */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1.3);
+        opacity: 0;
+    }
+}
+
+@keyframes slideRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* تصميم الهاتف */
+@media (max-width: 850px) {
+
+    .header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .plans-container {
+        grid-template-columns: 1fr;
+    }
+
+    .features-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .steps {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .popular {
+        transform: none;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .features-container,
+    .steps {
+        grid-template-columns: 1fr;
+    }
+
+    .wifi-animation {
+        transform: scale(0.85);
+    }
+
+    .section-title h2 {
+        font-size: 28px;
+    }
+}
+/* ظهور العناصر تدريجياً */
+.hidden {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}

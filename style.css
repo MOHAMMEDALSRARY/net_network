@@ -61,11 +61,26 @@ nav a:hover {
     align-items: center;
     gap: 40px;
     overflow: hidden;
+    position: relative;
+
     background:
-        radial-gradient(circle at 80% 50%, #182b69, transparent 35%),
+        radial-gradient(circle at 80% 50%, rgba(24, 43, 105, 0.9), transparent 40%),
+        radial-gradient(circle at 15% 80%, rgba(109, 40, 217, 0.25), transparent 40%),
         linear-gradient(135deg, #080d20, #101b42);
+
+    background-size: 150% 150%;
+    animation: heroBackground 8s ease-in-out infinite alternate;
 }
 
+@keyframes heroBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
+}
 .hero-content {
     max-width: 600px;
     animation: slideRight 1s ease;

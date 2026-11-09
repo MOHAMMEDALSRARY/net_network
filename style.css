@@ -565,3 +565,45 @@ footer {
     opacity: 1;
     transform: translateY(0);
 }
+/* زر القائمة للهاتف */
+.menu-toggle {
+display: none;
+background: transparent;
+border: 1px solid #00e5ff;
+color: #00e5ff;
+font-size: 27px;
+padding: 4px 12px;
+border-radius: 8px;
+cursor: pointer;
+}
+
+/* تصميم القائمة على الهاتف */
+@media (max-width: 768px) {
+.header {
+position: sticky;
+padding: 15px 5%;
+flex-wrap: wrap;
+}
+
+.menu-toggle {
+    display: block;
+}
+
+.header nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0 10px;
+}
+
+.header nav.active {
+    display: flex;
+}
+
+.header nav a {
+    font-size: 17px;
+}
+
+}

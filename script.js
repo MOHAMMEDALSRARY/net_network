@@ -107,3 +107,18 @@ threshold: 0.5
 counters.forEach(counter => {
 statsObserver.observe(counter);
 });
+// Developer Name Animation
+const developerName = document.querySelector('.developer-name');
+
+if (developerName) {
+    const developerObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                developerName.classList.add('show');
+                developerObserver.unobserve(developerName);
+            }
+        });
+    });
+
+    developerObserver.observe(developerName);
+}

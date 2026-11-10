@@ -607,3 +607,67 @@ flex-wrap: wrap;
 }
 
 }
+/* قسم الإحصائيات */
+.stats {
+padding: 80px 8%;
+background:
+radial-gradient(circle at 20% 50%, rgba(109, 40, 217, 0.15), transparent 40%),
+linear-gradient(135deg, #080d20, #101b42);
+}
+
+.stats-container {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 25px;
+margin-top: 45px;
+}
+
+.stat-card {
+padding: 30px 15px;
+text-align: center;
+background: rgba(255, 255, 255, 0.04);
+border: 1px solid rgba(0, 229, 255, 0.25);
+border-radius: 18px;
+transition: 0.3s ease;
+}
+
+.stat-card:hover {
+transform: translateY(-8px);
+border-color: #00e5ff;
+box-shadow: 0 0 25px rgba(0, 229, 255, 0.2);
+}
+
+.stat-icon {
+font-size: 38px;
+margin-bottom: 15px;
+}
+
+.stat-card h3 {
+font-size: 38px;
+color: #00e5ff;
+margin-bottom: 10px;
+}
+
+.stat-card p {
+color: #b8c6e8;
+font-size: 15px;
+}
+
+/* توافق الإحصائيات مع الهاتف */
+@media (max-width: 768px) {
+.stats-container {
+grid-template-columns: repeat(2, 1fr);
+gap: 15px;
+}
+
+.stat-card {
+    padding: 25px 10px;
+}
+
+}
+
+@media (max-width: 380px) {
+.stats-container {
+grid-template-columns: 1fr;
+}
+}

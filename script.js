@@ -67,3 +67,43 @@ mainNav.classList.remove("active");
 menuToggle.textContent = "☰";
 });
 });
+
+// تحريك أرقام الإحصائيات
+const counters = document.querySelectorAll(".counter");
+
+const statsObserver = new IntersectionObserver((entries, observer) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+const counter = entry.target;
+const target = Number(counter.dataset.target);
+const duration = 2000;
+const startTime = performance.now();
+
+        function updateCounter(currentTime) {
+            const progress = Math.min(
+                (currentTime - startTime) / duration,
+                1
+            );
+
+            const currentNumber = Math.floor(target * progress);
+            counter.textContent = currentNumber;
+
+            if (progress < 1) {
+                requestAnimationFrame(updateCounter);
+            } else {
+                counter.textContent = target;
+            }
+        }
+
+        requestAnimationFrame(updateCounter);
+        observer.unobserve(counter);
+    }
+});
+
+}, {
+threshold: 0.5
+});
+
+counters.forEach(counter => {
+statsObserver.observe(counter);
+});
